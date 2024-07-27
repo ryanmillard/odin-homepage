@@ -1,0 +1,52 @@
+@import './variables';
+@import './project-card';
+
+$max-columns: 3;
+$ideal-size: 350px;
+$grid-gap: 1rem;
+
+body {
+  margin: 0;
+}
+
+header {
+  width: 100vw;
+  height: 450px;
+  // position: relative;
+}
+
+.cutoff-background {
+  // position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #ebf4f5;
+  clip-path: polygon(0% 100%, 100% 50%, 100% 0%, 0% 0%);
+}
+
+main {
+  margin: 0 auto;
+  max-width: calc(($max-columns * $ideal-size) + ($max-columns * $grid-gap) + 200px);
+  padding: 30px;
+
+  @media screen and (max-width: 550px) {
+    padding: 10px;
+  }
+}
+
+footer {
+  width: 100vw;
+  height: 400px;
+  background-color: #b5c6e0;
+}
+
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(max(100% / ($max-columns + 1), $ideal-size), 100%), 1fr)); 
+  gap: $grid-gap;
+}
+
+.project-title {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 2rem;
+}
+
