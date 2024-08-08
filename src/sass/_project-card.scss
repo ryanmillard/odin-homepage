@@ -1,5 +1,20 @@
 @import './variables';
 
+$max-columns: 3;
+$ideal-size: 350px;
+$grid-gap: 1rem;
+
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(max(100% / ($max-columns + 1), $ideal-size), 100%), 1fr)); 
+  gap: $grid-gap;
+}
+
+.project-title {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 2rem;
+}
+
 .project-card {
   background-color: rgb(238, 238, 238);
   border-radius: 10px;
